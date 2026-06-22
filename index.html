@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Previsão de Colheita</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center p-8">
+    
+    <div class="w-full max-w-2xl bg-white p-8 rounded-3xl shadow-lg">
+        
+        <h2 class="text-2xl font-bold mb-6 text-gray-800 text-center">Previsão Agroclimática de Colheita</h2>
+        
+        <form id="predictForm" class="grid grid-cols-2 gap-4">
+            
+            <div><label class="text-sm text-gray-700 font-semibold">Ano:</label><input type="number" id="year" class="border p-2 w-full rounded-lg" value="2024"></div>
+            <div><label class="text-sm text-gray-700 font-semibold">Temp Max:</label><input type="number" step="0.01" id="max_temp" class="border p-2 w-full rounded-lg" value="35.0"></div>
+            <div><label class="text-sm text-gray-700 font-semibold">Temp Min:</label><input type="number" step="0.01" id="min_temp" class="border p-2 w-full rounded-lg" value="15.0"></div>
+            <div><label class="text-sm text-gray-700 font-semibold">Max Vento:</label><input type="number" step="0.01" id="max_wind_speed" class="border p-2 w-full rounded-lg" value="2.5"></div>
+            <div><label class="text-sm text-gray-700 font-semibold">Min Vento:</label><input type="number" step="0.01" id="min_wind_speed" class="border p-2 w-full rounded-lg" value="0.5"></div>
+            <div><label class="text-sm text-gray-700 font-semibold">Precipitação (Soma):</label><input type="number" step="0.01" id="precipitation" class="border p-2 w-full rounded-lg" value="100.0"></div>
+            <div><label class="text-sm text-gray-700 font-semibold">PAR (Sky Surface):</label><input type="number" step="0.01" id="par" class="border p-2 w-full rounded-lg" value="8.0"></div>
+            <div><label class="text-sm text-gray-700 font-semibold">Umidade Zona Raiz:</label><input type="number" step="0.01" id="root_soil_wetness" class="border p-2 w-full rounded-lg" value="0.4"></div>
+            <div><label class="text-sm text-gray-700 font-semibold">Umidade Superfície:</label><input type="number" step="0.01" id="surface_soil_wetness" class="border p-2 w-full rounded-lg" value="0.3"></div>
+            <div><label class="text-sm text-gray-700 font-semibold">Umidade (Geral):</label><input type="number" step="0.01" id="humidity" class="border p-2 w-full rounded-lg" value="10.0"></div>
+            <div><label class="text-sm text-gray-700 font-semibold">Temp Solo (Skin):</label><input type="number" step="0.01" id="earth_skin_temp" class="border p-2 w-full rounded-lg" value="22.0"></div>
+            
+            <div class="col-span-2 mt-4">
+                <label class="block font-bold mb-2 text-center text-gray-700">Selecione a Divisão:</label>
+                <select id="division" class="border p-2 w-full bg-white rounded-lg">
+                    <option value="Chittagong">Chittagong</option>
+                    <option value="Khulna">Khulna</option>
+                    <option value="Rajshahi">Rajshahi</option>
+                    <option value="Rangpur">Rangpur</option>
+                    <option value="Sylhet">Sylhet</option>
+                    <option value="Outro">Outra (Barishal)</option>
+                </select>
+            </div>
+
+            <button type="submit" class="col-span-2 bg-blue-600 text-white font-bold p-3 mt-4 rounded-xl hover:bg-blue-700 transition shadow">
+                Calcular Previsão
+            </button>
+        </form>
+        
+        <div id="loading" class="hidden mt-4 text-blue-600 font-semibold text-center">Analisando dados climáticos...</div>
+        <div id="error" class="hidden mt-4 text-red-600 font-semibold text-center"></div>
+        <div id="resultado" class="hidden mt-6 p-4 bg-blue-100 text-blue-800 text-xl rounded-xl font-bold text-center"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
