@@ -5,7 +5,7 @@ Este projeto utiliza um modelo de Machine Learning para prever o rendimento de u
 O sistema é dividio em partes:
 
 - **Backend:** API desenvolvida com FastAPI responsável por carregar o modelo treinado e realizar as predições. 
-- **Fronted:** Interface desenvolvida em HTML, CSS e JavaScript para que o usuário informe os dados e visualize o resultado. 
+- **Fronted:** Interface desenvolvida em HTML, Tailwind e JavaScript para que o usuário informe os dados e visualize o resultado. 
 
 ---
 
