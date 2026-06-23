@@ -24,7 +24,7 @@ O sistema é dividio em partes:
 ### Frontend
 
 - HTML5
-- CSS3
+- Tailwind
 - JavaScript
 
 ---
